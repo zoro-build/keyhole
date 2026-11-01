@@ -12,7 +12,7 @@
 | macOS(Apple Silicon) | **[Keyhole-macos-arm64.dmg](https://dl.zoro.build/keyhole/download/mac)** |
 | Windows(x64) | **[Keyhole-windows-x64.exe](https://dl.zoro.build/keyhole/download/win)** |
 
-经 `dl.zoro.build` 反代,国内可达;也可在 [Releases](../../releases/latest) 直接下载。
+也可在 [Releases](../../releases/latest) 页面下载对应客户端软件。
 
 ## 使用
 
@@ -25,11 +25,13 @@
 
 ## 安装注意
 
-**macOS**(Apple Silicon):
-- 一次性:关闭 SIP(恢复模式 `csrutil disable`)+ `sudo sysctl -w vm.cs_library_validation=0`。
-- 首次运行前去隔离位:`xattr -dr com.apple.quarantine /Applications/Keyhole.app`。
+**macOS**用户注意:
 
-**Windows**:双击允许 UAC(需管理员);SmartScreen / 杀毒告警点「更多信息 → 仍要运行」/ 放行。
+> 只支持 Apple Silicon，不支持 Intel 机型。
+
+1. 关闭系统的SIP，可参考 [disable sip](docs/disable-sip.md)
+2. 关库验证: `sudo sysctl -w vm.cs_library_validation=0`
+3. 去隔离位: `xattr -dr com.apple.quarantine /Applications/Keyhole.app`
 
 ---
 学术 / 研究用途;仅提取你自己机器上已登录微信的会话。
